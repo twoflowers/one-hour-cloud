@@ -41,5 +41,4 @@ def delete(vm_id):
 
 
 def create_vm(hostname, email):
-    print 'creating vm'
     api.create_vm(hostname, email)
