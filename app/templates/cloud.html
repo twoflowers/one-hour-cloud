@@ -24,21 +24,21 @@
             <th>delete</th></tr>
     </thead>
     <tbody>
-{% for instances in running.items() %}
-    
-    {% for instance in instances[1] %}
-        
+
+
+
+{% for instances in running['data'] %}
         <tr>
-            <td>{{ instance['templatedisplaytext'] }}</td>
-            <td> {{instance['name']}}</td>
-            <td> {{instance['details']['ip'] }}</td>
-            <td> {{instance['state']}}
-            <td> {{instance['created'] }}
+            <td>{{ instances['templatedisplaytext'] }}</td>
+            <td> {{instances['name']}}</td>
+            <td> {{instances['details']['ip'] }}</td>
+            <td> {{instances['state']}}
+            <td> {{instances['created'] }}
             </td>
             <td></td>
-            <td> <a href="/delete/{{instance['id']}}" class='delete'>delete</a></td>
+            <td> <a href="/delete/{{instances['id']}}" class='delete'>delete</a></td>
         </tr>
-    {% endfor %}
+
 {% endfor %}
     </tbody>
 </table>
